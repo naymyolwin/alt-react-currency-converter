@@ -3,9 +3,10 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from "@mui/icons-material/Home";
+import CustomButton from "../Common/CustomButton";
 
 class Navbar extends Component {
   render() {
@@ -18,14 +19,14 @@ class Navbar extends Component {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2, color: (theme) => theme.palette.primary.orange }}
+              sx={{ color: (theme) => theme.palette.primary.light }}
             >
-              <MenuIcon />
+              <HomeIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
+              ALLMONEY
             </Typography>
-            <Button color="inherit">Login</Button>
+            <CustomButton text="Contact US" />
           </Toolbar>
         </AppBar>
       </Box>

@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import ExchangeBox from "../Components/ExchangeBox";
 
 class Home extends Component {
   render() {
-    return <div>HOME</div>;
+    return (
+      <div>
+        <ExchangeBox />
+      </div>
+    );
   }
 }
 
