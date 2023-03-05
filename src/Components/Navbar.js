@@ -1,35 +1,38 @@
 import React, { Component } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-
-import IconButton from "@mui/material/IconButton";
-import HomeIcon from "@mui/icons-material/Home";
-import CustomButton from "../Common/CustomButton";
 
 class Navbar extends Component {
   render() {
     return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ color: (theme) => theme.palette.primary.light }}
-            >
-              <HomeIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              ALLMONEY
-            </Typography>
-            <CustomButton text="Contact US" />
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <nav className="navbar navbar-expand-sm bg-dark">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            <button className="btn btn-danger">ALLMONEY</button>
+          </a>
+          <button
+            className="navbar-toggler bg-danger"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-dark navbar-toggler-icon "></span>
+          </button>
+          <div
+            className="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">
+                  <button className="btn btn-danger">Contact Us</button>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     );
   }
 }
