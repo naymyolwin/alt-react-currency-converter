@@ -20,6 +20,10 @@ module.exports = {
         ccGray: "#EFE6DD",
         ccYellow: "#F3DFA2",
       },
+      backgroundImage: {
+        contact:
+          "url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80')",
+      },
     },
   },
   plugins: [],

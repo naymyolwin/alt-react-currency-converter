@@ -6,7 +6,7 @@ class SwapBtn extends Component {
   render() {
     return (
       <div>
-        <button className="w-10 h-10 mx-1 rounded-full bg-[#fff]">
+        <button className="w-10 h-10 mx-1 rounded-full bg-ccGray border-2 hover:border-ccOrange duration-200 group">
           <FontAwesomeIcon
             className="text-ccOrange"
             icon={faArrowRightArrowLeft}

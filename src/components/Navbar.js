@@ -7,12 +7,17 @@ import Button from "../common/Button";
 class Navbar extends Component {
   render() {
     return (
-      <div className="flex justify-between items-center px-10 h-20 w-full bg-ccDark">
-        <FontAwesomeIcon className="h-10 w-10 text-ccGray" icon={faHouse} />
+      <div className="h-20 w-full bg-ccDark">
+        <div className="container flex w-full h-full justify-between items-center mx-auto">
+          <FontAwesomeIcon
+            className="h-10 w-10 mx-10 text-ccGray cursor-pointer hover:text-ccOrange duration-200"
+            icon={faHouse}
+          />
 
-        <div>
-          <Hamburger />
-          <Button />
+          <div className="mx-10">
+            <Hamburger />
+            <Button />
+          </div>
         </div>
       </div>
     );
