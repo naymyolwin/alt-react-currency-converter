@@ -8,17 +8,19 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
-    colors: {
-      ccDark: "#2C2828",
-      ccOrange: "#BB4430",
-      ccTeal: "#7EBDC2",
-      ccGray: "#EFE6DD",
-      ccYellow: "#F3DFA2",
-    },
+
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        ccDark: "#2C2828",
+        ccOrange: "#BB4430",
+        ccTeal: "#7EBDC2",
+        ccGray: "#EFE6DD",
+        ccYellow: "#F3DFA2",
+      },
+    },
   },
   plugins: [],
 };
