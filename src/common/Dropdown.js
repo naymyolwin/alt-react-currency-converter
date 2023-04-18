@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 
-class Dropdown extends Component {
+class DropdownBtn extends Component {
   render() {
+    const list = this.props.list;
     return (
-      <div className="mx-1">
-        <input
-          type="text"
-          className="w-full h-10 border-2 px-5 rounded-lg focus:outline-none focus:border-ccOrange"
-        />
+      <div className="mx-1 w-full">
+        <select className="w-full h-10 p-2.5 text-gray-500 bg-white rounded-lg shadow-lg focus:outline-none outline-none appearance-none focus:border-ccOrange">
+          {list.map((item) => {
+            return (
+              <option className="text-ccOrange" key={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
       </div>
     );
   }
 }
 
-export default Dropdown;
+export default DropdownBtn;

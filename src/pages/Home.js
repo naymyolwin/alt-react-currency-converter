@@ -1,13 +1,27 @@
 import React, { Component } from "react";
-import Navbar from "../components/Navbar";
 import Convert from "../components/Convert";
-import Footer from "../components/Footer";
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currencyList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://api.frankfurter.app/latest").then((response) => {
+      response.json().then((list) => {
+        this.setState(() => {
+          return { currencyList: Object.keys(list.rates) };
+        });
+      });
+    });
+  }
   render() {
     return (
       <div>
-        <Convert />
+        <Convert list={this.state.currencyList} />
       </div>
     );
   }
