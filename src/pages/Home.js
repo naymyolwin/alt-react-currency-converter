@@ -13,32 +13,33 @@ class Home extends Component {
   }
 
   onChangeCurrency = (e) => {
-    this.setState(
-      {
-        [e.target.name]: e.target.value,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   };
 
   onChangeAmount = (e) => {
-    this.setState(
-      {
-        amount: e.target.value,
-      },
-      () => {
-        console.log(this.state.amount);
-      }
-    );
+    this.setState({
+      amount: e.target.value,
+    });
+  };
+
+  onConvert = () => {
+    const host = "api.frankfurter.app";
+    fetch(
+      `https://${host}/latest?amount=${this.state.amount}&from=${this.state.fromCurrency}&to=${this.state.toCurrency}`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data.rates[this.state.toCurrency]);
+      });
   };
 
   componentDidMount() {
-    fetch("https://api.frankfurter.app/latest").then((response) => {
+    fetch("https://api.frankfurter.app/currencies").then((response) => {
       response.json().then((list) => {
         this.setState(() => {
-          return { currencyList: Object.keys(list.rates) };
+          return { currencyList: Object.keys(list) };
         });
       });
     });
@@ -53,6 +54,7 @@ class Home extends Component {
           toCurrency={this.state.toCurrency}
           onChangeAmount={this.onChangeAmount}
           onChangeCurrency={this.onChangeCurrency}
+          onConvert={this.onConvert}
         />
       </div>
     );

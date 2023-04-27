@@ -30,7 +30,7 @@ class Convert extends Component {
             />
           </div>
 
-          <ConvertBtn />
+          <ConvertBtn onConvert={this.props.onConvert} />
         </div>
       </div>
     );
