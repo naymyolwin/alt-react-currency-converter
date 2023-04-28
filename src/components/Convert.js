@@ -17,14 +17,18 @@ class Convert extends Component {
             />
             <DropdownBtn
               list={this.props.list}
-              fromCurrency={this.props.fromCurrency}
+              currency={this.props.fromCurrency}
               onChangeCurrency={this.props.onChangeCurrency}
               name="fromCurrency"
             />
-            <SwapBtn />
+            <SwapBtn
+              fromCurrency={this.props.fromCurrency}
+              toCurrency={this.props.toCurrency}
+              onSwap={this.props.onSwap}
+            />
             <DropdownBtn
               list={this.props.list}
-              fromCurrency={this.props.toCurrency}
+              currency={this.props.toCurrency}
               onChangeCurrency={this.props.onChangeCurrency}
               name="toCurrency"
             />

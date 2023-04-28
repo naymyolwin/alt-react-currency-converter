@@ -35,6 +35,15 @@ class Home extends Component {
       });
   };
 
+  onSwap = () => {
+    const from = this.state.fromCurrency;
+    const to = this.state.toCurrency;
+    this.setState({
+      fromCurrency: to,
+      toCurrency: from,
+    });
+  };
+
   componentDidMount() {
     fetch("https://api.frankfurter.app/currencies").then((response) => {
       response.json().then((list) => {
@@ -55,6 +64,7 @@ class Home extends Component {
           onChangeAmount={this.onChangeAmount}
           onChangeCurrency={this.onChangeCurrency}
           onConvert={this.onConvert}
+          onSwap={this.onSwap}
         />
       </div>
     );
