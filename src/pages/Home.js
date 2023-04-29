@@ -9,6 +9,7 @@ class Home extends Component {
       amount: "",
       fromCurrency: "",
       toCurrency: "",
+      rate: "",
     };
   }
 
@@ -38,7 +39,11 @@ class Home extends Component {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data.rates[this.state.toCurrency]);
+        this.setState({
+          rate: `${this.state.amount} ${this.state.fromCurrency} = ${
+            data.rates[this.state.toCurrency]
+          } ${this.state.toCurrency}`,
+        });
       });
   };
 
@@ -72,6 +77,7 @@ class Home extends Component {
           onChangeCurrency={this.onChangeCurrency}
           onConvert={this.onConvert}
           onSwap={this.onSwap}
+          rate={this.state.rate}
         />
       </div>
     );
