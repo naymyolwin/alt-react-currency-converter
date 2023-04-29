@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ConvertTable from "../common/ConvertTable";
+import Graph from "./Graph";
 
 class ConvertList extends Component {
   render() {
@@ -16,11 +17,9 @@ class ConvertList extends Component {
         ? false
         : true;
     return (
-      <>
+      <div className={`${result ? "" : "hidden"}`}>
         <div
-          className={`w-full mt-96 md:mt-40 container mx-auto flex flex-col md:flex-row gap-4 md:gap-2 ${
-            result ? "" : "hidden"
-          }`}
+          className={`w-full mt-96 md:mt-40 container mx-auto flex flex-col md:flex-row gap-4 md:gap-2`}
         >
           <ConvertTable
             list={this.props.list}
@@ -35,7 +34,8 @@ class ConvertList extends Component {
             rate={this.props.reverseRate}
           />
         </div>
-      </>
+        <Graph />
+      </div>
     );
   }
 }
