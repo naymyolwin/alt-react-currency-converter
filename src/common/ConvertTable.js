@@ -18,11 +18,11 @@ class ConvertTable extends Component {
           id="lower"
           className="flex justify-around bg-ccGray rounded-b-xl p-5 h-20"
         >
-          <div id="left" className="w-full text-center">
-            1
+          <div id="left" className="w-full text-center text-ccOrange">
+            1 USD
           </div>
-          <div id="right" className="w-full text-center">
-            1
+          <div id="right" className="w-full text-center text-ccDark">
+            1 GBP
           </div>
         </div>
       </div>

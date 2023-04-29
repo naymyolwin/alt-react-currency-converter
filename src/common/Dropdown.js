@@ -11,7 +11,7 @@ class DropdownBtn extends Component {
           name={this.props.name}
           onChange={this.props.onChangeCurrency}
         >
-          {list.map((item) => {
+          {Object.values(list).map((item) => {
             return (
               <option className="text-ccOrange" key={item}>
                 {item}

@@ -19,7 +19,7 @@ class Convert extends Component {
               />
               <DropdownBtn
                 list={this.props.list}
-                currency={this.props.fromCurrency}
+                currency={this.props.list[this.props.fromCurrency]}
                 onChangeCurrency={this.props.onChangeCurrency}
                 name="fromCurrency"
               />
@@ -30,13 +30,18 @@ class Convert extends Component {
               />
               <DropdownBtn
                 list={this.props.list}
-                currency={this.props.toCurrency}
+                currency={this.props.list[this.props.toCurrency]}
                 onChangeCurrency={this.props.onChangeCurrency}
                 name="toCurrency"
               />
             </div>
 
-            <ConvertBtn onConvert={this.props.onConvert} />
+            <ConvertBtn
+              onConvert={this.props.onConvert}
+              fromCurrency={this.props.fromCurrency}
+              toCurrency={this.props.toCurrency}
+              amount={this.props.amount}
+            />
           </div>
         </div>
         <ConvertList />

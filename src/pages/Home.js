@@ -5,17 +5,29 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      currencyList: [],
+      currencyList: {},
       amount: "",
       fromCurrency: "",
       toCurrency: "",
     };
   }
 
+  getKeyByValue = (obj, val) => {
+    return Object.keys(obj).find((key) => obj[key] === val);
+  };
+
   onChangeCurrency = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+    this.setState(
+      {
+        [e.target.name]: this.getKeyByValue(
+          this.state.currencyList,
+          e.target.value
+        ),
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   onChangeAmount = (e) => {
@@ -47,8 +59,8 @@ class Home extends Component {
   componentDidMount() {
     fetch("https://api.frankfurter.app/currencies").then((response) => {
       response.json().then((list) => {
-        this.setState(() => {
-          return { currencyList: Object.keys(list) };
+        this.setState({
+          currencyList: list,
         });
       });
     });
