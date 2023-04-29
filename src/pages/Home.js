@@ -8,11 +8,12 @@ class Home extends Component {
     this.state = {
       currencyList: {},
       amount: "",
-      fromCurrency: "",
-      toCurrency: "",
+      fromCurrency: "USD",
+      toCurrency: "EUR",
       rate: "",
       forwardRate: "",
       reverseRate: "",
+      converted: false,
     };
   }
 
@@ -37,6 +38,9 @@ class Home extends Component {
 
   onConvert = () => {
     const host = "api.frankfurter.app";
+    this.setState({
+      converted: true,
+    });
     fetch(
       `https://${host}/latest?amount=${this.state.amount}&from=${this.state.fromCurrency}&to=${this.state.toCurrency}`
     )
@@ -76,6 +80,8 @@ class Home extends Component {
     this.setState({
       fromCurrency: to,
       toCurrency: from,
+
+      converted: false,
     });
   };
 
@@ -88,6 +94,7 @@ class Home extends Component {
       });
     });
   }
+
   render() {
     return (
       <div>
@@ -103,6 +110,7 @@ class Home extends Component {
           rate={this.state.rate}
           forwardRate={this.state.forwardRate}
           reverseRate={this.state.reverseRate}
+          converted={this.state.converted}
         />
         <Recommanded />
       </div>

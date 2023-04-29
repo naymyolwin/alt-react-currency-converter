@@ -55,12 +55,14 @@ class Convert extends Component {
           </div>
         </div>
         <ConvertList
+          amount={this.props.amount}
           list={this.props.list}
           toCurrency={this.props.toCurrency}
           fromCurrency={this.props.fromCurrency}
           rate={this.props.rate}
           forwardRate={this.props.forwardRate}
           reverseRate={this.props.reverseRate}
+          converted={this.props.converted}
         />
       </>
     );

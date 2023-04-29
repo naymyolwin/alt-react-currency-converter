@@ -6,9 +6,6 @@ import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 class Footer extends Component {
   render() {
-    const socialClick = (e) => {
-      console.log(e.currentTarget.id);
-    };
     return (
       <>
         <div className="w-full h-40 bg-ccDark text-ccGray">
@@ -22,8 +19,6 @@ class Footer extends Component {
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   className="w-8 h-8 hover:text-ccOrange duration-200 cursor-pointer"
-                  onClick={socialClick}
-                  id="linkedin"
                 />
               </a>
               <a
@@ -34,16 +29,11 @@ class Footer extends Component {
                 <FontAwesomeIcon
                   icon={faGithub}
                   className="w-8 h-8 hover:text-ccOrange duration-200 cursor-pointer"
-                  id="github"
                 />
               </a>
             </div>
 
-            <div
-              className="flex items-center mx-10"
-              onClick={socialClick}
-              id="email"
-            >
+            <div className="flex items-center mx-10">
               <FontAwesomeIcon
                 icon={faCopyright}
                 className="w-7 h-7 pr-2 text-ccOrange"
