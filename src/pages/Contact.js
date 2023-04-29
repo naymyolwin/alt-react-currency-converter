@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../common/Button";
+import SendButton from "../common/SendButton";
 
 class Contact extends Component {
   render() {
@@ -29,7 +29,7 @@ class Contact extends Component {
               rows={7}
               className="border-2 p-5 my-8 border-ccOrange bg-ccGray placeholder:text-ccOrange focus:outline-none"
             />
-            <Button />
+            <SendButton />
           </div>
           <div className="relative w-full hidden xl:block">
             <img

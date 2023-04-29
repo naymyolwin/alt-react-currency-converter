@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import Hamburger from "../common/Hamburger";
-import Button from "../common/Button";
+import ContactButton from "../common/ContactButton";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {
@@ -19,7 +19,7 @@ class Navbar extends Component {
 
           <div className="mx-10">
             <Hamburger />
-            <Button />
+            <ContactButton />
           </div>
         </div>
       </div>

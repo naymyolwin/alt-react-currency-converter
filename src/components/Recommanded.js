@@ -9,7 +9,7 @@ class Recommanded extends Component {
           <div className="text-center text-ccOrange font-bold text-2xl pt-10">
             Recommended by 55,000+ verified customers
           </div>
-          <div className="container mx-auto flex flex-col xl:flex-row items-center gap-5 md:justify-around mt-10 p-10">
+          <div className="container mx-auto flex flex-col xl:flex-row items-center gap-10 xl:gap-5 md:justify-around mt-10 p-10">
             <Card
               title="Straightforward and pricise"
               text="The process is straightforward and quick and the exchange rate is very good and constantly updated so you can send the amount you intend easily. The transfer took several days but was completed well before the guaranteed date. Highly recommended."

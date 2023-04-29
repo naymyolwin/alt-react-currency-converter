@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class Button extends Component {
+class ContactButton extends Component {
   render() {
     return (
       <Link
@@ -14,4 +14,4 @@ class Button extends Component {
   }
 }
 
-export default Button;
+export default ContactButton;
