@@ -7,8 +7,8 @@ class ConvertList extends Component {
     return (
       <>
         <div
-          className={`relative w-full container mx-auto flex flex-col md:flex-row -mt-48 md:-mt-96 mb-10 gap-4 md:gap-2 ${
-            result ? "block" : "hidden"
+          className={`w-full mt-96 md:mt-40 container mx-auto flex flex-col md:flex-row gap-4 md:gap-2 ${
+            result ? "" : "hidden"
           }`}
         >
           <ConvertTable

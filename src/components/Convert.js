@@ -11,15 +11,17 @@ class Convert extends Component {
     const result = this.props.rate === "" ? false : true;
     return (
       <>
-        <div className="relative bg-ccGray w-full mb-[calc(100vh-560px)] md:mb-[calc(100vh-480px)] h-80 md:h-60">
+        <div
+          className={`relative bg-ccGray w-full h-[500px] md:h-[450px] mb-[360px] md:mb-60`}
+        >
           <div
-            className={`pt-20 text-center text-ccOrange font-bold text-xl md:text-2xl ${
-              result ? "" : "hidden"
-            }`}
+            className={`pt-32 px-20 text-center text-ccOrange font-bold text-xl md:text-2xl`}
           >
-            {this.props.rate}
+            {result
+              ? this.props.rate
+              : "Trusted Global Currency Exchange & Money Transfer Solutions"}
           </div>
-          <div className="container absolute top-32 inset-x-0 flex flex-col xl:px-60 items-center mx-auto px-16 py-8 gap-10 bg-ccTeal rounded-lg shadow-lg">
+          <div className="container absolute top-64 inset-x-0 flex flex-col xl:px-60 items-center mx-auto px-16 py-24 gap-20 bg-ccTeal rounded-lg shadow-lg">
             <div className="w-full flex flex-col md:flex-row items-center gap-5">
               <Amount
                 amount={this.props.amount}

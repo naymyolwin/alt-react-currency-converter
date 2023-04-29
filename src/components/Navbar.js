@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <div className="h-20 w-full bg-ccDark">
+      <div className="h-40 w-full bg-ccDark">
         <div className="container flex w-full h-full justify-between items-center mx-auto">
           <Link to="/">
             <FontAwesomeIcon

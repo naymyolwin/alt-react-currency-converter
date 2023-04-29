@@ -11,7 +11,7 @@ class Footer extends Component {
     };
     return (
       <>
-        <div className="absolute w-full h-40 bg-ccDark text-ccGray">
+        <div className="w-full h-40 bg-ccDark text-ccGray">
           <div className="container flex flex-col md:flex-row-reverse items-center mx-auto justify-around md:justify-between h-full">
             <div className="flex gap-5 mx-10">
               <FontAwesomeIcon

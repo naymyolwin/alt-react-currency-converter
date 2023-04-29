@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Convert from "../components/Convert";
+import Recommanded from "../components/Recommanded";
 
 class Home extends Component {
   constructor() {
@@ -103,6 +104,7 @@ class Home extends Component {
           forwardRate={this.state.forwardRate}
           reverseRate={this.state.reverseRate}
         />
+        <Recommanded />
       </div>
     );
   }
