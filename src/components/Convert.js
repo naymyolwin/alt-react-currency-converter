@@ -11,7 +11,7 @@ class Convert extends Component {
     const result = this.props.rate === "" ? false : true;
     return (
       <>
-        <div className="relative bg-ccGray w-full h-80 md:h-60">
+        <div className="relative bg-ccGray w-full mb-[calc(100vh-560px)] md:mb-[calc(100vh-480px)] h-80 md:h-60">
           <div
             className={`pt-20 text-center text-ccOrange font-bold text-xl md:text-2xl ${
               result ? "" : "hidden"
@@ -52,7 +52,14 @@ class Convert extends Component {
             />
           </div>
         </div>
-        <ConvertList />
+        <ConvertList
+          list={this.props.list}
+          toCurrency={this.props.toCurrency}
+          fromCurrency={this.props.fromCurrency}
+          rate={this.props.rate}
+          forwardRate={this.props.forwardRate}
+          reverseRate={this.props.reverseRate}
+        />
       </>
     );
   }

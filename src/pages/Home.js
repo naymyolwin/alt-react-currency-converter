@@ -10,6 +10,8 @@ class Home extends Component {
       fromCurrency: "",
       toCurrency: "",
       rate: "",
+      forwardRate: "",
+      reverseRate: "",
     };
   }
 
@@ -45,6 +47,26 @@ class Home extends Component {
           } ${this.state.toCurrency}`,
         });
       });
+
+    fetch(
+      `https://${host}/latest?amount=1&from=${this.state.fromCurrency}&to=${this.state.toCurrency}`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.setState({
+          forwardRate: data.rates[this.state.toCurrency],
+        });
+      });
+
+    fetch(
+      `https://${host}/latest?amount=1&from=${this.state.toCurrency}&to=${this.state.fromCurrency}`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.setState({
+          reverseRate: data.rates[this.state.fromCurrency],
+        });
+      });
   };
 
   onSwap = () => {
@@ -78,6 +100,8 @@ class Home extends Component {
           onConvert={this.onConvert}
           onSwap={this.onSwap}
           rate={this.state.rate}
+          forwardRate={this.state.forwardRate}
+          reverseRate={this.state.reverseRate}
         />
       </div>
     );
