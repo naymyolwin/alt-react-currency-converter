@@ -17,17 +17,12 @@ class Home extends Component {
   };
 
   onChangeCurrency = (e) => {
-    this.setState(
-      {
-        [e.target.name]: this.getKeyByValue(
-          this.state.currencyList,
-          e.target.value
-        ),
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      [e.target.name]: this.getKeyByValue(
+        this.state.currencyList,
+        e.target.value
+      ),
+    });
   };
 
   onChangeAmount = (e) => {

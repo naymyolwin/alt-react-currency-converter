@@ -10,8 +10,11 @@ class Convert extends Component {
   render() {
     return (
       <>
-        <div className="bg-ccGray w-full h-80 md:h-60  ">
-          <div className="container relative top-32 flex flex-col xl:px-60 items-center mx-auto px-16 py-8 gap-10 bg-ccTeal rounded-lg shadow-lg">
+        <div className="relative bg-ccGray w-full h-80 md:h-60">
+          <div className="pt-20 text-center text-ccOrange font-bold text-xl md:text-2xl">
+            1 USD = 34.2342 THB
+          </div>
+          <div className="container absolute top-32 inset-x-0 flex flex-col xl:px-60 items-center mx-auto px-16 py-8 gap-10 bg-ccTeal rounded-lg shadow-lg">
             <div className="w-full flex flex-col md:flex-row items-center gap-5">
               <Amount
                 amount={this.props.amount}
