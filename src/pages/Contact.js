@@ -31,11 +31,11 @@ class Contact extends Component {
             />
             <SendButton />
           </div>
-          <div className="relative w-full hidden xl:block">
+          <div className="relative w-full min-h-[calc(100vh-260px)] hidden xl:flex">
             <img
               src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80"
               alt=""
-              className="w-full h-full object-cover"
+              className=""
             />
             <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-ccOrange bg-opacity-20"></div>
           </div>
