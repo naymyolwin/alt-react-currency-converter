@@ -14,18 +14,29 @@ class Footer extends Component {
         <div className="w-full h-40 bg-ccDark text-ccGray">
           <div className="container flex flex-col md:flex-row-reverse items-center mx-auto justify-around md:justify-between h-full">
             <div className="flex gap-5 mx-10">
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="w-8 h-8 hover:text-ccOrange duration-200 cursor-pointer"
-                onClick={socialClick}
-                id="linkedin"
-              />
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="w-8 h-8 hover:text-ccOrange duration-200 cursor-pointer"
-                onClick={socialClick}
-                id="github"
-              />
+              <a
+                href="https://www.linkedin.com/in/naymyolwin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="w-8 h-8 hover:text-ccOrange duration-200 cursor-pointer"
+                  onClick={socialClick}
+                  id="linkedin"
+                />
+              </a>
+              <a
+                href="https://github.com/naymyolwin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="w-8 h-8 hover:text-ccOrange duration-200 cursor-pointer"
+                  id="github"
+                />
+              </a>
             </div>
 
             <div
