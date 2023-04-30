@@ -63,6 +63,7 @@ class Convert extends Component {
           forwardRate={this.props.forwardRate}
           reverseRate={this.props.reverseRate}
           converted={this.props.converted}
+          historyData={this.props.historyData}
         />
       </>
     );

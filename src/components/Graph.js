@@ -50,6 +50,7 @@ export const data = {
 
 class Graph extends Component {
   render() {
+    console.log(this.props.historyData);
     return (
       <div className="container mx-auto p-10 mt-10 bg-ccGray rounded-lg">
         <Line options={options} data={data} />

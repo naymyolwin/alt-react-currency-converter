@@ -34,7 +34,7 @@ class ConvertList extends Component {
             rate={this.props.reverseRate}
           />
         </div>
-        <Graph />
+        <Graph historyData={this.props.historyData} />
       </div>
     );
   }

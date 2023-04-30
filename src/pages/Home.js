@@ -14,6 +14,7 @@ class Home extends Component {
       forwardRate: "",
       reverseRate: "",
       converted: false,
+      historyData: {},
     };
   }
 
@@ -72,6 +73,23 @@ class Home extends Component {
           reverseRate: data.rates[this.state.fromCurrency],
         });
       });
+    const date = new Date();
+    date.setDate(date.getDate() - 90);
+    const year = date.toLocaleString("default", { year: "numeric" });
+    const month = date.toLocaleString("default", { month: "2-digit" });
+    const day = date.toLocaleString("default", { day: "2-digit" });
+
+    const formattedDate = year + "-" + month + "-" + day;
+
+    fetch(
+      `https://${host}/${formattedDate}..?from=${this.state.fromCurrency}&&to=${this.state.toCurrency}`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.setState({
+          historyData: data,
+        });
+      });
   };
 
   onSwap = () => {
@@ -80,7 +98,6 @@ class Home extends Component {
     this.setState({
       fromCurrency: to,
       toCurrency: from,
-
       converted: false,
     });
   };
@@ -111,6 +128,7 @@ class Home extends Component {
           forwardRate={this.state.forwardRate}
           reverseRate={this.state.reverseRate}
           converted={this.state.converted}
+          historyData={this.state.historyData}
         />
         <Recommanded />
       </div>
