@@ -2,6 +2,27 @@ import React, { Component } from "react";
 import SendButton from "../common/SendButton";
 
 class Contact extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      email: "",
+      phone: "",
+      textarea: "",
+    };
+  }
+
+  inputUpdate = (e) => {
+    this.setState(
+      {
+        [e.target.name]: e.target.value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+
   render() {
     return (
       <div className="bg-ccOrange bg-opacity-40">
@@ -12,24 +33,41 @@ class Contact extends Component {
             <input
               type="text"
               placeholder="Name"
-              className="border-b-2 px-5 my-8 placeholder:text-ccOrange border-ccOrange focus:outline-none"
+              value={this.state.name}
+              name="name"
+              onChange={this.inputUpdate}
+              className="border-b-2 px-5 my-8 placeholder:text-ccOrange border-ccOrange text-ccDark focus:outline-none"
             />
             <input
               type="text"
               placeholder="Email"
-              className="border-b-2 px-5 my-8 placeholder:text-ccOrange border-ccOrange focus:outline-none"
+              value={this.state.email}
+              name="email"
+              onChange={this.inputUpdate}
+              className="border-b-2 px-5 my-8 placeholder:text-ccOrange border-ccOrange text-ccDark focus:outline-none"
             />
             <input
               type="text"
               placeholder="Phone"
-              className="border-b-2 px-5 my-8 placeholder:text-ccOrange border-ccOrange focus:outline-none"
+              value={this.state.phone}
+              name="phone"
+              onChange={this.inputUpdate}
+              className="border-b-2 px-5 my-8 placeholder:text-ccOrange border-ccOrange text-ccDark focus:outline-none"
             />
             <textarea
               placeholder="say something..."
               rows={7}
-              className="border-2 p-5 my-8 border-ccOrange bg-ccGray placeholder:text-ccOrange focus:outline-none"
+              value={this.state.textarea}
+              name="textarea"
+              onChange={this.inputUpdate}
+              className="border-2 p-5 my-8 border-ccOrange bg-ccGray placeholder:text-ccOrange text-ccDark focus:outline-none"
             />
-            <SendButton />
+            <SendButton
+              name={this.state.name}
+              email={this.state.email}
+              phone={this.state.phone}
+              textarea={this.state.textarea}
+            />
           </div>
           <div className="relative w-full min-h-[calc(100vh-260px)] hidden xl:flex">
             <img
