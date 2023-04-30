@@ -24,6 +24,7 @@ class Home extends Component {
 
   onChangeCurrency = (e) => {
     this.setState({
+      converted: false,
       [e.target.name]: this.getKeyByValue(
         this.state.currencyList,
         e.target.value
@@ -34,6 +35,8 @@ class Home extends Component {
   onChangeAmount = (e) => {
     this.setState({
       amount: e.target.value,
+
+      converted: false,
     });
   };
 

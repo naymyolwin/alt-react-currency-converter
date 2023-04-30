@@ -8,7 +8,18 @@ import ConvertBtn from "../common/ConvertBtn";
 
 class Convert extends Component {
   render() {
-    const result = this.props.rate === "" ? false : true;
+    const result =
+      this.props.rate === ""
+        ? false
+        : this.props.amount === ""
+        ? false
+        : this.props.fromCurrency === ""
+        ? false
+        : this.props.toCurrency === ""
+        ? false
+        : this.props.converted === false
+        ? false
+        : true;
     return (
       <>
         <div

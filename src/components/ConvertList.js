@@ -34,7 +34,11 @@ class ConvertList extends Component {
             rate={this.props.reverseRate}
           />
         </div>
-        <Graph historyData={this.props.historyData} />
+        <Graph
+          historyData={this.props.historyData}
+          fromCurrency={this.props.fromCurrency}
+          toCurrency={this.props.toCurrency}
+        />
       </div>
     );
   }
