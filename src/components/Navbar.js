@@ -18,7 +18,6 @@ class Navbar extends Component {
           </Link>
 
           <div className="mx-10">
-            <Hamburger />
             <ContactButton />
           </div>
         </div>

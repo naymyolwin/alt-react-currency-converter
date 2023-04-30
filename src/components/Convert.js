@@ -3,7 +3,6 @@ import Amount from "../common/Amount";
 import DropdownBtn from "../common/Dropdown";
 import SwapBtn from "../common/SwapBtn";
 import ConvertList from "./ConvertList";
-
 import ConvertBtn from "../common/ConvertBtn";
 
 class Convert extends Component {
@@ -23,7 +22,7 @@ class Convert extends Component {
     return (
       <>
         <div
-          className={`relative bg-ccGray w-full h-[500px] md:h-[450px] mb-[360px] md:mb-60`}
+          className={`relative bg-ccGray w-full h-[500px] md:h-[450px] mb-[360px] md:mb-60  overscroll-none`}
         >
           <div
             className={`pt-32 px-20 text-center text-ccOrange font-bold text-xl md:text-2xl`}
